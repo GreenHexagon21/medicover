@@ -1,0 +1,19 @@
+@import "../../../../medicover/public/assets/globals";
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+        border-radius: 0;
+        font-size: 1.2rem;
+        background-color: $color-white-main;
+        border: 2px solid $color-white-main;
+        color: $color-dark-blue-main;
+    }
+    button:hover {
+        border-bottom: 2px solid $color-dark-blue-main;
+        color: $color-blue-main;
+        background-color: #d5e1f3;
+    }
+}

@@ -1,1 +1,12 @@
-<p>menu works!</p>
+<div class="menu-container">
+    @for (item of items; track item.id) {
+    <button type="button" pButton (click)="menu.toggle($event)">
+        {{ item.label }}
+    </button>
+
+    <p-tieredmenu #menu [autoDisplay]="true" [model]="item.items" [popup]="true" appendTo="body" />
+    } @empty {
+    <li>There are no items.</li>
+    }
+
+</div>
