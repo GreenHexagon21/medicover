@@ -3,13 +3,27 @@
 .header-body {
     padding: 0.5rem;
     background: $color-blue-main;
-    background: linear-gradient(90deg,rgba(232, 240, 252, 1) 14%, rgba(12, 85, 162, 1) 20%);
+    background: linear-gradient(90deg,rgba(232, 240, 252, 1) 13%, rgba(12, 85, 162, 1) 18%);
     display: flex;
     justify-content: space-between;
     align-items: center;
     
     .button-container {
-
+        display: flex;
+        gap: 0.4rem;
+    }
+    button {
+        background-color: $color-dark-blue-main;
+        color: $color-white-main; 
+        border: 2px solid $color-dark-blue-main;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+        button:hover {
+        background-color: #05376d;
+        color: $color-white-main; 
+        border: 2px solid $color-white-main;
     }
     img {
         height: 3rem;
