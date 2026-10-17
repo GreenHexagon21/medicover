@@ -9,6 +9,9 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     providePrimeNG({
+      theme: {
+                preset: Aura
+            },
       license: 'eyJpZCI6IjQ1MDE5NWJhLTc3YzgtNDNmOS1iN2RjLTMyZmY1ZTA1OTRhOSIsInByb2R1Y3QiOiJwcmltZXVpIiwidGllciI6ImNvbW11bml0eSIsInR5cGUiOiJkZXYiLCJpYXQiOjE3OTIyMzQ1NTksImV4cCI6MTgyMzc3MDU1OX0._ul_Z6U9JP102nZdT8PSdYBO9iRQu06aUN2BjtbrhE15_awwqJUnUPxMP81GH79sfQjd5NCkLlmL1F5-rA0UBA'
     })
   ]

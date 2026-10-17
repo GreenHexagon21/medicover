@@ -3,5 +3,15 @@
 .header-body {
     padding: 0.5rem;
     background: $color-blue-main;
-    background: linear-gradient(90deg,rgba(232, 240, 252, 1) 18%, rgba(12, 85, 162, 1) 23%);
+    background: linear-gradient(90deg,rgba(232, 240, 252, 1) 14%, rgba(12, 85, 162, 1) 20%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .button-container {
+
+    }
+    img {
+        height: 3rem;
+    }
 }
