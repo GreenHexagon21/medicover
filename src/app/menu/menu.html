@@ -1,12 +1,102 @@
-<div class="menu-container">
-    @for (item of items; track item.id) {
-    <button type="button" pButton (click)="menu.toggle($event)">
-        {{ item.label }}
-    </button>
+<nav
+  class="menu-container"
+  aria-label="Főmenü"
+  (mouseleave)="closeMenu()"
+  (focusout)="onFocusOut($event)"
+>
+  @for (item of items; track item.id ?? $index) {
+    <div
+      class="menu-item"
+      [class.is-open]="openId === item.id"
+      [class.has-children]="!!item.items?.length"
+      (mouseenter)="openMenu(item)"
+      (focusin)="openMenu(item)"
+    >
+      <button
+        type="button"
+        class="menu-trigger"
+        [attr.aria-haspopup]="item.items?.length ? 'true' : null"
+        [attr.aria-expanded]="item.items?.length ? openId === item.id : null"
+        [attr.aria-controls]="item.items?.length ? 'menu-' + item.id : null"
+        (click)="onTopClick(item, $event)"
+      >
+        <span class="menu-trigger-label">{{ item.label }}</span>
+<!-- 
+        @if (item.items?.length) {
+          <svg
+            class="menu-trigger-caret"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M6 9l6 6 6-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        } -->
+      </button>
 
-    <p-tieredmenu #menu [autoDisplay]="true" [model]="item.items" [popup]="true" appendTo="body" />
-    } @empty {
-    <li>There are no items.</li>
+      @if (item.items?.length) {
+        <div class="submenu" [id]="'menu-' + item.id">
+          <ng-container
+            *ngTemplateOutlet="submenuList; context: { $implicit: item.items }"
+          />
+        </div>
+      }
+    </div>
+  } @empty {
+    <p class="menu-empty">There are no items.</p>
+  }
+</nav>
+
+<ng-template #submenuList let-children>
+  <ul class="submenu-list">
+    @for (child of children; track child.id ?? $index) {
+      <li class="submenu-item" [class.has-children]="!!child.items?.length">
+        <button
+          type="button"
+          class="submenu-link"
+          [attr.aria-haspopup]="child.items?.length ? 'true' : null"
+          (click)="onItemClick(child, $event)"
+        >
+          @if (child.icon) {
+            <i [class]="child.icon" aria-hidden="true"></i>
+          }
+
+          <span class="submenu-label">{{ child.label }}</span>
+
+          @if (child.items?.length) {
+            <svg
+              class="submenu-arrow"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M9 6l6 6-6 6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          }
+        </button>
+
+        @if (child.items?.length) {
+          <div class="submenu submenu--nested">
+            <ng-container
+              *ngTemplateOutlet="submenuList; context: { $implicit: child.items }"
+            />
+          </div>
+        }
+      </li>
     }
-
-</div>
+  </ul>
+</ng-template>

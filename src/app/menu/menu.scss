@@ -1,19 +1,245 @@
 @import "../../../../medicover/public/assets/globals";
 
+:host {
+  display: block;
+  position: relative;
+  z-index: 50;
+}
+
 .menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem 0;
+
+  .menu-item {
+    position: relative;
     display: flex;
-    justify-content: center;
+    align-items: stretch;
+
+    &.is-open,
+    &:focus-within {
+      z-index: 2;
+    }
+  }
+
+  .menu-trigger {
+    position: relative;
+    display: inline-flex;
     align-items: center;
-    button {
-        border-radius: 0;
-        font-size: 1.2rem;
-        background-color: $color-white-main;
-        border: 2px solid $color-white-main;
-        color: $color-dark-blue-main;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1rem;
+    border: 2px solid $color-white-main;
+    border-radius: 0;
+    background-color: $color-white-main;
+    color: $color-dark-blue-main;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      color 0.25s ease,
+      background-color 0.25s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $color-dark-blue-main;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+      pointer-events: none;
     }
-    button:hover {
-        border-bottom: 2px solid $color-dark-blue-main;
-        color: $color-blue-main;
-        background-color: #d5e1f3;
+
+    &:focus-visible {
+      outline: 2px solid $color-blue-main;
+      outline-offset: 2px;
     }
+  }
+
+  /* Submenu indicator (inline SVG) */
+  .menu-trigger-caret {
+    display: block;
+    flex: 0 0 auto;
+    width: 0.8em;
+    height: 0.8em;
+    opacity: 0.75;
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
+  }
+
+  .menu-trigger:hover,
+  .menu-trigger:focus-visible,
+  .menu-item.is-open > .menu-trigger {
+    color: $color-blue-main;
+    background-color: #d5e1f3;
+
+    &::after {
+      transform: scaleX(1);
+    }
+
+    .menu-trigger-caret {
+      opacity: 1;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+/* Base dropdown panel — left edge aligns with the button's left edge */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-0.5rem) scale(0.98);
+  transform-origin: top left;
+  transition:
+    opacity 0.18s ease,
+    transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+    visibility 0s linear 0.22s;
+}
+
+.menu-item.is-open > .submenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  transition-delay: 0s;
+}
+
+/* Nested flyout */
+.submenu--nested {
+  top: -0.4rem;
+  left: 100%;
+  padding: 0 0 0 0.5rem;
+  transform: translateX(-0.35rem) scale(0.98);
+  transform-origin: left top;
+}
+
+.submenu-item.has-children:hover > .submenu--nested,
+.submenu-item.has-children:focus-within > .submenu--nested {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0) scale(1);
+  transition-delay: 0s;
+}
+
+.submenu-list {
+  width: max-content;
+  min-width: 15rem;
+  margin: 0;
+  padding: 0.4rem;
+  list-style: none;
+  background-color: $color-light-grey-secondary;
+  border: none;
+  border-radius: 0.4rem;
+  box-shadow:
+    0 0.75rem 1.75rem rgba(0, 0, 0, 0.14),
+    0 0.125rem 0.4rem rgba(0, 0, 0, 0.08);
+}
+
+.submenu-item {
+  position: relative;
+}
+
+.submenu-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 0;
+  border-radius: 0.3rem;
+  background-color: transparent;
+  color: $color-dark-blue-main;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.25;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease;
+
+  > .pi {
+    flex: 0 0 1rem;
+    width: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    opacity: 0.75;
+    transition: opacity 0.18s ease;
+  }
+
+  .submenu-label {
+    flex: 1;
+  }
+
+  /* Nested flyout indicator (inline SVG) */
+  .submenu-arrow {
+    display: block;
+    flex: 0 0 auto;
+    width: 0.85em;
+    height: 0.85em;
+    margin-left: auto;
+    opacity: 0.7;
+    transition:
+      transform 0.18s ease,
+      opacity 0.18s ease;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: $color-white-main;
+    color: $color-blue-main;
+
+    > .pi {
+      opacity: 1;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-blue-main;
+    outline-offset: -2px;
+  }
+}
+
+.submenu-item.has-children:hover > .submenu-link .submenu-arrow,
+.submenu-item.has-children:focus-within > .submenu-link .submenu-arrow {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+.menu-empty {
+  margin: 0;
+  padding: 1rem;
+  color: $color-dark-blue-main;
+  font-size: 0.95rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-trigger,
+  .menu-trigger::after,
+  .menu-trigger-caret,
+  .submenu,
+  .submenu-link,
+  .submenu-link > .pi,
+  .submenu-arrow {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
 }
