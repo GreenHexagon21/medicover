@@ -1,30 +1,58 @@
 @import "../../../../medicover/public/assets/globals";
 
+    .surgos {
+        background-color: $color-green-pop;
+        padding: 1rem;
+        border-radius: 15px 0px 0px 15px;
+        font-weight: 700;
+    }
+
 .header-body {
     padding: 0.5rem;
+    padding-right: 0;
     background: $color-blue-main;
-    background: linear-gradient(90deg,rgba(232, 240, 252, 1) 13%, rgba(12, 85, 162, 1) 18%);
+    background: linear-gradient(90deg, rgba(232, 240, 252, 1) 13%, rgba(12, 85, 162, 1) 18%);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
+
     .button-container {
         display: flex;
         gap: 0.4rem;
+        .contacts {
+            p {
+                margin: 0;
+            }
+        }
+        .phone {
+            display: flex;
+        }
+        .mail {
+            display: flex;
+        }
+
+        .svg-inline--fa {
+            width: 16px;
+            margin-right: 0.3rem;
+        }
     }
+
     button {
         background-color: $color-dark-blue-main;
-        color: $color-white-main; 
+        color: $color-white-main;
         border: 2px solid $color-dark-blue-main;
-        border-radius: 10px;
+        border-radius: 15px;
         font-weight: bold;
         font-size: 1.2rem;
     }
-        button:hover {
+
+    button:hover {
         background-color: #05376d;
-        color: $color-white-main; 
+        color: $color-white-main;
         border: 2px solid $color-white-main;
     }
+
     img {
         height: 3rem;
     }

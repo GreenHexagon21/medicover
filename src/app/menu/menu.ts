@@ -20,16 +20,14 @@ export class Menu implements OnInit {
         icon: 'pi pi-file',
         items: [
           {
-            label: 'New',
+            label: 'Daganatsebészeti műtétek',
             icon: 'pi pi-plus',
             items: [
-              { label: 'Document', icon: 'pi pi-file' },
-              { label: 'Image', icon: 'pi pi-image' },
-              { label: 'Video', icon: 'pi pi-video' },
+              { label: 'Szigmabél eltávolítása', icon: 'pi pi-file' },
             ],
           },
-          { label: 'Open', icon: 'pi pi-folder-open' },
-          { label: 'Print', icon: 'pi pi-print' },
+          { label: 'Érsebészeti műtét', icon: 'pi pi-folder-open' },
+          { label: 'Fül-orr-gégészeti műtétek', icon: 'pi pi-print' },
         ],
       },
       {
@@ -37,8 +35,23 @@ export class Menu implements OnInit {
         label: 'Vizsgálatok',
         icon: 'pi pi-pencil',
         items: [
-          { label: 'Copy', icon: 'pi pi-copy' },
-          { label: 'Delete', icon: 'pi pi-trash' },
+          { label: 'PCR és IgG ellenanyag koronavírus tesztek', icon: 'pi pi-copy' },
+          { label: 'Betegszállítás', icon: 'pi pi-trash' },
+          {
+            label: 'Diagnosztika', icon: 'pi pi-trash',
+            items: [
+              { label: 'Diagnosztika árlista', icon: 'pi pi-file' },
+              { label: 'Gyermekradiológia', icon: 'pi pi-image' },
+              {
+                label: 'MR vizsgálatok', icon: 'pi pi-video',
+                items: [
+                  { label: 'Ágyéki gerinc MR', icon: 'pi pi-file' },
+                  { label: 'Belső fül + koponya MR', icon: 'pi pi-image' },
+                  { label: 'Csípő MR', icon: 'pi pi-video' },
+                ],
+              },
+            ],
+          },
         ],
       },
       {

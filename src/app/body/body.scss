@@ -1,0 +1,93 @@
+@import "../../../../medicover/public/assets/globals";
+
+.upper-part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    color: $color-white-main;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    
+    .surgos {
+        background-color: $color-green-pop;
+        padding: 1rem;
+        border-radius: 0px 15px 15px 0px;
+    }
+}
+
+.upper-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-right: 0.5rem;
+
+  button {
+    position: relative; // anchor for ::after
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1.25rem;
+
+    border: none;
+    border-radius: 5px;
+    border-top: 2px solid #E8F0FC;
+    // background-color: $color-light-grey-secondary;
+    background: #E8F0FC;
+    background: linear-gradient(0deg,rgba(209, 217, 235, 1) 70%, rgba(232, 240, 252, 1) 100%);;
+    color: $color-dark-blue-main;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      color 0.25s ease,
+      background-color 0.25s ease,
+      border-color 0.25s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0rem;
+      left: 0rem;  // matches horizontal padding
+      right: 0rem; // keeps the bar clear of the rounded corners
+      height: 3px;
+      background-color: $color-green-pop;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+      pointer-events: none;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: $color-white-main;
+      color: $color-blue-main;
+      border-color: $color-white-main;
+      border-radius: 5px;
+    //   border-top: 2px solid black;
+        box-shadow:
+    0 0.75rem 1.75rem rgba(0, 0, 0, 0.14),
+    0 0.125rem 0.4rem rgba(0, 0, 0, 0.08);
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-white-main;
+      outline-offset: 2px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .upper-buttons button,
+  .upper-buttons button::after {
+    transition-duration: 0.01ms !important;
+  }
+}

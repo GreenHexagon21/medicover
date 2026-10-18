@@ -94,7 +94,7 @@
   }
 }
 
-/* Base dropdown panel — left edge aligns with the button's left edge */
+
 .submenu {
   position: absolute;
   top: 100%;
@@ -122,9 +122,8 @@
 
 /* Nested flyout */
 .submenu--nested {
-  top: -0.4rem;
+  top: 0;
   left: 100%;
-  padding: 0 0 0 0.5rem;
   transform: translateX(-0.35rem) scale(0.98);
   transform-origin: left top;
 }
@@ -142,11 +141,11 @@
   width: max-content;
   min-width: 15rem;
   margin: 0;
-  padding: 0.4rem;
+    padding: 0;
   list-style: none;
   background-color: $color-light-grey-secondary;
   border: none;
-  border-radius: 0.4rem;
+
   box-shadow:
     0 0.75rem 1.75rem rgba(0, 0, 0, 0.14),
     0 0.125rem 0.4rem rgba(0, 0, 0, 0.08);
@@ -163,7 +162,7 @@
   width: 100%;
   padding: 0.65rem 0.75rem;
   border: 0;
-  border-radius: 0.3rem;
+
   background-color: transparent;
   color: $color-dark-blue-main;
   font-family: inherit;
@@ -189,7 +188,7 @@
     flex: 1;
   }
 
-  /* Nested flyout indicator (inline SVG) */
+
   .submenu-arrow {
     display: block;
     flex: 0 0 auto;
