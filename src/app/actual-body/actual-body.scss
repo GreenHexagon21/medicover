@@ -6,6 +6,38 @@
     align-items: center;
     margin-left: 5rem;
     margin-right: 5rem;
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        width: 35vw;
+        gap: 1rem;
+        .card {
+            height: 12vh;
+            width: 10vw;
+            border-radius: 15px;
+            padding: 0.5rem;
+            font-weight: 600;
+            color: $color-grey-secondary;
+            background-color: $color-light-grey-secondary;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            .submenu-arrow {
+                max-width: 16px;
+                // border: 1px solid black;
+                border-radius: 10px;
+            }
+        }
+    }
+    .upper-body {
+        display: flex;
+        h2 {
+            color: $color-dark-blue-main;
+        }
+        .offers {
+            width: 55vw;
+        }
+    }
 }
 
     .surgos {
@@ -17,6 +49,7 @@
 
 h1 {
     color: $color-blue-main;
+    text-align: center;
 }
 h3 {
     color: $color-grey-secondary;

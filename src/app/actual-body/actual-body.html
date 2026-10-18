@@ -1,12 +1,44 @@
 <div class="main-body">
+    <div class="upper-body">
+        <div>
+            <h2>
+                Műtét részletek
 
-<h1>
-    Széleskörű egészségügyi ellátás az egész családnak egy helyen
-</h1>
-<h3>
-    A Medicarenél tudjuk, hogy mindenki számára az egészsége a legértékesebb.
-<br>
-Ezért küldetésünknek tartjuk az Ön és családja egészségének támogatását, melyben nem ismerünk kompromisszumot. A legmagasabb szakmai igényesség mellett teljes körű ellátást nyújtunk közel 40 szakterületen, legyen szó járóbeteg ellátásról, képalkotó diagnosztikáról, laborvizsgálatról, vagy műtéti beavatkozásról.
-</h3>
+            </h2>
+            <div class="cards">
+                @for (item of surgeryCards; track item.title ?? $index) {
+                <div class="card">
+                    <div>
+                        {{item.title}}
+                    </div>
+
+                    <svg class="submenu-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.25"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                }
+            </div>
+
+        </div>
+        <div class="offers">
+            <h2>
+                Jelenlegi ajánlataink
+            </h2>
+        </div>
+    </div>
+    <div>
+        <h1>
+            Széleskörű egészségügyi ellátás az egész családnak egy helyen
+        </h1>
+        <h3>
+            A Medicarenél tudjuk, hogy mindenki számára az egészsége a legértékesebb.
+            <br>
+            Ezért küldetésünknek tartjuk az Ön és családja egészségének támogatását, melyben nem ismerünk
+            kompromisszumot. A
+            legmagasabb szakmai igényesség mellett teljes körű ellátást nyújtunk közel 40 szakterületen, legyen szó
+            járóbeteg ellátásról, képalkotó diagnosztikáról, laborvizsgálatról, vagy műtéti beavatkozásról.
+        </h3>
+    </div>
+
 </div>
-
