@@ -1,13 +1,11 @@
 <div class="main-body">
     <div class="upper-body">
         <div>
-            <h2>
-                Műtét részletek
+            <h2>Műtét részletek</h2>
 
-            </h2>
             <div class="cards">
                 @for (item of surgeryCards; track item.title ?? $index) {
-                <div class="card">
+                <div class="surgery-card">
                     <div>
                         {{item.title}}
                     </div>
@@ -19,18 +17,126 @@
                 </div>
                 }
             </div>
-
         </div>
+
         <div class="offers">
-            <h2>
-                Jelenlegi ajánlataink
-            </h2>
+            <h2>Jelenlegi ajánlataink</h2>
+
+            <div class="offers-grid">
+                <a class="card card--featured" href="https://online.medicare-group.hu/login">
+                    <div class="card-head">
+                        <h3 class="card-title">Telemedicina szolgáltatás</h3>
+                    </div>
+
+                    <div class="card-mid">
+                        <ul class="card-list card-list--single">
+                            <li>időpont akár holnapra!</li>
+                            <li class="card-list-group">
+                                <span class="card-list-lead">
+                                    online videós konzultáció az alábbi szakágakban:
+                                </span>
+                                <ul class="card-list-sub card-list-sub--stack">
+                                    <li class="card-list-sub-item">
+                                        bőrgyógyászat
+                                        <ul class="card-list-sub-nested">
+                                            <li>18 év felett</li>
+                                            <li>száraz bőr</li>
+                                            <li>bőrnövedék</li>
+                                            <li>pattanásos bőr</li>
+                                            <li>korpásodás</li>
+                                            <li>hajhullás</li>
+                                            <li>testhajlat- és kézfejpanaszok</li>
+                                            <li>lábfej és a lábujjak között</li>
+                                        </ul>
+                                    </li>
+                                    <li>belgyógyászat</li>
+                                    <li>dietetika</li>
+                                    <li>endokrinológia</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="card-cta">
+                            Tovább
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+
+                <div class="news-grid__stack">
+                    <a class="card card--compact"
+                        href="https://medicare-group.hu/egeszsegmegorzes/alex-multiplex-allergiateszt-295-allergenre/">
+                        <div class="card-accent"></div>
+
+                        <div class="card-head">
+                            <h3 class="card-title">ALEX multiplex allergiateszt</h3>
+                        </div>
+
+                        <div class="card-mid">
+                            <div class="card-list card-list--cols">
+                                <ul class="card-list-col">
+                                    <li>295 allergénre</li>
+                                    <li>teljes képet ad az allergénekről</li>
+                                    <li>egyetlen vérvételből</li>
+                                    <li>keresztallergiák kiszűrésére is</li>
+                                    <li>gyors, 5 munkanapon belüli részletes eredmény</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <span class="card-cta">
+                                Tovább
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+
+                    <a class="card card--compact card--green"
+                        href="https://medicare-group.hu/szurovizsgalatok/medicare-start-allapotfelmero-szurovizsgalati-csomag/">
+                        <div class="card-accent"></div>
+
+                        <div class="card-head">
+                            <h3 class="card-title">Start állapotfelmérő csomag</h3>
+                        </div>
+
+                        <div class="card-mid">
+                            <div class="card-list card-list--cols">
+                                <ul class="card-list-col">
+                                    <li>komplex állapotfelmérés</li>
+                                    <li>belgyógyászati vizsgálat</li>
+                                    <li>nagylabor</li>
+                                    <li>nyugalmi EKG</li>
+                                    <li>most 39.990 Ft-​【12&nbsp;m】ért</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <span class="card-cta">
+                                Tovább
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
+
     <div>
-        <h1>
-            Széleskörű egészségügyi ellátás az egész családnak egy helyen
-        </h1>
+        <h1>Széleskörű egészségügyi ellátás az egész családnak egy helyen</h1>
         <h3>
             A Medicarenél tudjuk, hogy mindenki számára az egészsége a legértékesebb.
             <br>
@@ -41,4 +147,350 @@
         </h3>
     </div>
 
+    <!-- Alsó ajánlatkártyák -->
+    <div class="promo-cards">
+        <article class="promo-card">
+            <a class="promo-card__media"
+                href="https://medicare-group.hu/laborvizsgalatok/laborvizsgalati-csomagok/etelintolerancia-laborcsomag/#220"
+                target="_blank" rel="noopener noreferrer" tabindex="-1">
+                <img src="https://medicarekorhaz.hu/wp-content/uploads/2026/08/fox-etelintolerancia.jpg"
+                    alt="FOX 286 ételintolerancia panel" width="410" height="307" loading="lazy" decoding="async">
+            </a>
+
+            <div class="promo-card__body">
+                <h3 class="promo-card__title">
+                    <a href="https://medicare-group.hu/laborvizsgalatok/laborvizsgalati-csomagok/etelintolerancia-laborcsomag/#220"
+                        target="_blank" rel="noopener noreferrer">FOX 286 étel-intolerancia panel</a>
+                </h3>
+            </div>
+
+            <div class="promo-card__footer">
+                <a class="promo-card__cta"
+                    href="https://medicare-group.hu/laborvizsgalatok/laborvizsgalati-csomagok/etelintolerancia-laborcsomag/#220"
+                    target="_blank" rel="noopener noreferrer">
+                    Tovább
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" aria-hidden="true" focusable="false">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </article>
+
+        <article class="promo-card">
+            <a class="promo-card__media" href="https://medicare-group.hu/medicare-surgossegi-centrum/"
+                target="_blank" rel="noopener noreferrer" tabindex="-1">
+                <img src="https://medicare-group.hu/media/wp-import/2025/09/ugyelet-mr-vasarnap-is-2-1.jpg"
+                    alt="Sürgősségi centrum" width="410" height="307" loading="lazy" decoding="async">
+            </a>
+
+            <div class="promo-card__body">
+                <h3 class="promo-card__title">
+                    <a href="https://medicare-group.hu/medicare-surgossegi-centrum/" target="_blank"
+                        rel="noopener noreferrer">Sürgősségi centrum</a>
+                </h3>
+            </div>
+
+            <div class="promo-card__footer">
+                <a class="promo-card__cta" href="https://medicare-group.hu/medicare-surgossegi-centrum/"
+                    target="_blank" rel="noopener noreferrer">
+                    Tovább
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" aria-hidden="true" focusable="false">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </article>
+
+        <article class="promo-card">
+            <a class="promo-card__media" href="https://medicareszuleszet.hu/rolunk/nyilt-nap/" target="_blank"
+                rel="noopener noreferrer" tabindex="-1">
+                <img src="https://medicare-group.hu/media/wp-import/2025/09/szuleszeti-nyilt-napok.jpg"
+                    alt="Szülészeti nyílt napok" width="410" height="307" loading="lazy" decoding="async">
+            </a>
+
+            <div class="promo-card__body">
+                <h3 class="promo-card__title">
+                    <a href="https://medicareszuleszet.hu/rolunk/nyilt-nap/" target="_blank"
+                        rel="noopener noreferrer">Szülészeti nyílt napok</a>
+                </h3>
+            </div>
+
+            <div class="promo-card__footer">
+                <a class="promo-card__cta" href="https://medicareszuleszet.hu/rolunk/nyilt-nap/" target="_blank"
+                    rel="noopener noreferrer">
+                    Tovább
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" aria-hidden="true" focusable="false">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </article>
+
+        <article class="promo-card">
+            <a class="promo-card__media"
+                href="https://medicare-group.hu/szakrendelesek/obezitologiai-tanacsadas-sulykontroll-szakerto-tamogatassal/"
+                target="_blank" rel="noopener noreferrer" tabindex="-1">
+                <img src="https://medicarekorhaz.hu/wp-content/uploads/2026/08/obezitologiai-tanacsadas-1.jpg"
+                    alt="Obezitológiai tanácsadás" width="410" height="307" loading="lazy" decoding="async">
+            </a>
+
+            <div class="promo-card__body">
+                <h3 class="promo-card__title">
+                    <a href="https://medicare-group.hu/szakrendelesek/obezitologiai-tanacsadas-sulykontroll-szakerto-tamogatassal/"
+                        target="_blank" rel="noopener noreferrer">Obezitológiai tanácsadás</a>
+                </h3>
+            </div>
+
+            <div class="promo-card__footer">
+                <a class="promo-card__cta"
+                    href="https://medicare-group.hu/szakrendelesek/obezitologiai-tanacsadas-sulykontroll-szakerto-tamogatassal/"
+                    target="_blank" rel="noopener noreferrer">
+                    Tovább
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" aria-hidden="true" focusable="false">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </article>
+
+        <article class="promo-card">
+            <a class="promo-card__media" href="https://medicare-group.hu/szakrendelesek/meddosegi-tanacsadas/"
+                target="_blank" rel="noopener noreferrer" tabindex="-1">
+                <img src="https://medicarekorhaz.hu/wp-content/uploads/2026/08/meddosegi-tanacsadas-02.jpg"
+                    alt="Meddőségi tanácsadás" width="410" height="307" loading="lazy" decoding="async">
+            </a>
+
+            <div class="promo-card__body">
+                <h3 class="promo-card__title">
+                    <a href="https://medicare-group.hu/szakrendelesek/meddosegi-tanacsadas/" target="_blank"
+                        rel="noopener noreferrer">Meddőségi tanácsadás</a>
+                </h3>
+            </div>
+
+            <div class="promo-card__footer">
+                <a class="promo-card__cta" href="https://medicare-group.hu/szakrendelesek/meddosegi-tanacsadas/"
+                    target="_blank" rel="noopener noreferrer">
+                    Tovább
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" aria-hidden="true" focusable="false">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </article>
+
+        <article class="promo-card">
+            <a class="promo-card__media" href="https://medicare-group.hu/mutet/" target="_blank"
+                rel="noopener noreferrer" tabindex="-1">
+                <img src="https://medicarekorhaz.hu/wp-content/uploads/2026/08/urologiai-mutetek-1.jpg"
+                    alt="Széles körű műtétek" width="410" height="307" loading="lazy" decoding="async">
+            </a>
+
+            <div class="promo-card__body">
+                <h3 class="promo-card__title">
+                    <a href="https://medicare-group.hu/mutet/" target="_blank" rel="noopener noreferrer">Széles körű
+                        műtétek</a>
+                </h3>
+            </div>
+
+            <div class="promo-card__footer">
+                <a class="promo-card__cta" href="https://medicare-group.hu/mutet/" target="_blank"
+                    rel="noopener noreferrer">
+                    Tovább
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" aria-hidden="true" focusable="false">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </article>
+
+        <article class="promo-card">
+            <a class="promo-card__media"
+                href="https://medicaredental.hu/fogko-eltavolitas/fogkoeltavolitas-iranyitott-biofilmes-terapiaval/"
+                target="_blank" rel="noopener noreferrer" tabindex="-1">
+                <img src="https://medicarekorhaz.hu/wp-content/uploads/2026/08/biofilmes-fogkoeltavolitas-1.jpg"
+                    alt="Biofilmes fogkő-eltávolítás" width="410" height="307" loading="lazy" decoding="async">
+            </a>
+
+            <div class="promo-card__body">
+                <h3 class="promo-card__title">
+                    <a href="https://medicaredental.hu/fogko-eltavolitas/fogkoeltavolitas-iranyitott-biofilmes-terapiaval/"
+                        target="_blank" rel="noopener noreferrer">Biofilmes fogkő-eltávolítás</a>
+                </h3>
+            </div>
+
+            <div class="promo-card__footer">
+                <a class="promo-card__cta"
+                    href="https://medicaredental.hu/fogko-eltavolitas/fogkoeltavolitas-iranyitott-biofilmes-terapiaval/"
+                    target="_blank" rel="noopener noreferrer">
+                    Tovább
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" aria-hidden="true" focusable="false">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </article>
+
+        <article class="promo-card">
+            <a class="promo-card__media" href="https://medicareoptika.hu/akciok/oktoberi-latasunnep/"
+                target="_blank" rel="noopener noreferrer" tabindex="-1">
+                <img src="https://medicarekorhaz.hu/wp-content/uploads/2026/10/2026_okt_latasunnep_signage.jpg"
+                    alt="Komplett szemüvegek már 24.999 Ft-ért" width="856" height="720" loading="lazy"
+                    decoding="async">
+            </a>
+
+            <div class="promo-card__body">
+                <h3 class="promo-card__title">
+                    <a href="https://medicareoptika.hu/akciok/oktoberi-latasunnep/" target="_blank"
+                        rel="noopener noreferrer">40% kedvezmény keretre vagy lencsékre</a>
+                </h3>
+            </div>
+
+            <div class="promo-card__footer">
+                <a class="promo-card__cta" href="https://medicareoptika.hu/akciok/oktoberi-latasunnep/" target="_blank"
+                    rel="noopener noreferrer">
+                    Tovább
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" aria-hidden="true" focusable="false">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </article>
+    </div>
+        <!-- Kórház bemutató -->
+    <section class="hospital-tour" aria-roledescription="carousel" aria-label="Medicare Magánkórház bemutatása">
+        <input class="hospital-tour__state" type="radio" name="hospital-tour" id="tour-slide-1" checked>
+        <input class="hospital-tour__state" type="radio" name="hospital-tour" id="tour-slide-2">
+
+        <div class="hospital-tour__viewport">
+            <article class="hospital-tour__slide hospital-tour__slide--1" aria-roledescription="slide"
+                aria-label="1 / 2">
+                <figure class="hospital-tour__media">
+                    <img src="https://medicarekorhaz.hu/wp-content/uploads/2025/07/varo-1.webp"
+                        alt="A Medicare Magánkórház váróterme" width="553" height="442" loading="lazy"
+                        decoding="async">
+                </figure>
+
+                <div class="hospital-tour__content">
+                    <h2 class="hospital-tour__title">
+                        Medicare Magánkórház, ahol a magas szintű ellátás nem luxus
+                    </h2>
+
+                    <div class="hospital-tour__text">
+                        <p>
+                            Egészségügyi komplexumunkban orvosaink és a szakszemélyzet azért dolgozik, hogy Ön a lehető
+                            legrövidebb időn belül diagnózist, majd személyre szabott terápiát kapjon és az esetleges
+                            műtéti beavatkozás után mielőbb otthonában, szerettei körében gyógyulhasson.
+                        </p>
+                        <p>
+                            Hogy megkönnyítsük és gyorsítsuk a panasz okának felderítését, egy helyen kínálunk
+                            teljeskörű szolgáltatást a szakorvosi rendelésektől a laboratóriumi vizsgálatokon át a modern
+                            képalkotó diagnosztikáig.
+                        </p>
+                        <p>
+                            Magánkórházunkban a műtét utáni napokban légkondicionált, fürdőszobás, hűtővel, televízióval
+                            és vezeték nélküli internet hozzáféréssel ellátott szobákban biztosítunk elhelyezést, hogy a
+                            lábadozás időszaka is kellemesen teljen.
+                        </p>
+                        <p>Ez az a luxus, ami Önnek is jár, ha az egészségéről van szó.</p>
+                    </div>
+
+                    <div class="hospital-tour__actions">
+                        <a class="hospital-tour__btn hospital-tour__btn--ghost" href="https://medicarekorhaz.hu/rolunk/"
+                            target="_blank" rel="noopener noreferrer">Bővebben a kórházról</a>
+
+                        <a class="hospital-tour__btn hospital-tour__btn--primary"
+                            href="https://medicarekorhaz.hu/rolunk/virtualis-tura/" target="_blank"
+                            rel="noopener noreferrer">
+                            Megnézem a kórházat
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" aria-hidden="true" focusable="false">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="hospital-tour__slide hospital-tour__slide--2" aria-roledescription="slide"
+                aria-label="2 / 2">
+                <figure class="hospital-tour__media">
+                    <img src="https://medicarekorhaz.hu/wp-content/uploads/2025/07/mutet-medicarekorhaz.webp"
+                        alt="Műtét a Medicare Magánkórház műtőjében" width="553" height="442" loading="lazy"
+                        decoding="async">
+                </figure>
+
+                <div class="hospital-tour__content">
+                    <h2 class="hospital-tour__title">Műtétek, fekvőbeteg-ellátás</h2>
+
+                    <div class="hospital-tour__text">
+                        <p>
+                            A <a href="https://medicarekorhaz.hu/virtualis-tura" target="_blank"
+                                rel="noopener noreferrer">Medicare Kórház</a>ban a legmodernebb technológiát alkalmazó
+                            orvosi eszközöket használunk, korszerű műtéti valamint betegellátási körülményeket
+                            biztosítunk a sikeres gyógyítás és az Önök kényelmének szolgálatában.
+                        </p>
+                        <p>
+                            <a href="https://medicarekorhaz.hu/galeria/" target="_blank"
+                                rel="noopener noreferrer">Magánkórházunk</a>ban 60 férőhely, légkondicionált szobák és
+                            személyre szabott ellátás várja <a
+                                href="https://medicarekorhaz.hu/medicare-magankorhaz/medicare-magankorhaz-velemenyek"
+                                target="_blank" rel="noopener noreferrer">pácienseinket</a>. Egyéni nővérfelügyeletet
+                            biztosítunk, aki a tartózkodása alatt segíti az Ön folyamatos ellátását.
+                        </p>
+                        <p>
+                            Műtőinkben a legkorszerűbb műszereket használjuk, biztosítva ezzel a kíméletes műtéti
+                            technikák illetve eljárások alkalmazását.
+                        </p>
+                    </div>
+
+                    <div class="hospital-tour__actions">
+                        <a class="hospital-tour__btn hospital-tour__btn--primary" href="https://medicarekorhaz.hu/mutet"
+                            target="_blank" rel="noopener noreferrer">
+                            Műtéti megoldások
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" aria-hidden="true" focusable="false">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Két dia esetén mindkét nyíl a másikra mutat; további diánál igazítsd a for="" értékeket -->
+        <div class="hospital-tour__nav">
+            <label class="hospital-tour__arrow hospital-tour__arrow--prev" for="tour-slide-2">
+                <span class="hospital-tour__sr">Előző dia</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    aria-hidden="true" focusable="false">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </label>
+
+            <div class="hospital-tour__dots">
+                <label class="hospital-tour__dot hospital-tour__dot--1" for="tour-slide-1">
+                    <span class="hospital-tour__sr">1. dia: Medicare Magánkórház</span>
+                </label>
+                <label class="hospital-tour__dot hospital-tour__dot--2" for="tour-slide-2">
+                    <span class="hospital-tour__sr">2. dia: Műtétek, fekvőbeteg-ellátás</span>
+                </label>
+            </div>
+
+            <label class="hospital-tour__arrow hospital-tour__arrow--next" for="tour-slide-1">
+                <span class="hospital-tour__sr">Következő dia</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    aria-hidden="true" focusable="false">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </label>
+        </div>
+    </section>
 </div>
